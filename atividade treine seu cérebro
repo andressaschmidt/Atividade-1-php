@@ -1,0 +1,23 @@
+<?php
+    const DIAS_ANO = 365;
+    const MINUTOS_PERDIDOS_1CIGARRO = 11;
+
+    $anos = 3;
+    $dias = $anos * DIAS_ANO;  
+    $cigarros_dia = 10;
+    $total_cigarros = $cigarros_dia * $dias;
+    $total_minutos_perdidos = MINUTOS_PERDIDOS_1CIGARRO * $total_cigarros;
+
+    
+    $total_horas_perdidas = intdiv($total_minutos_perdidos, 60);
+    $minutos_perdidos = $total_minutos_perdidos - (60 * intdiv($total_minutos_perdidos, 60));
+
+    $total_dias_perdidos = intdiv($total_horas_perdidas, 24);
+    $horas_perdidas = $total_horas_perdidas - (24 * intdiv($total_horas_perdidas, 24));
+
+    $meses_perdidos = intdiv($total_dias_perdidos, 30);
+    $dias_perdidos = $total_dias_perdidos - (30 * intdiv($total_dias_perdidos, 30));
+
+    $resultado = "<p> Fumando <strong> 10 </strong> vezes ao dia, ao longo de <strong >3 </strong> anos, uma pessoa perderia em torno:</p>
+        <p> {$meses_perdidos} <strong> meses </strong>, {$dias_perdidos} <strong> dias </strong>, {$horas_perdidas} <strong> horas </strong> e {$minutos_perdidos} <strong> minutos </strong></p>";
+    print $resultado;
