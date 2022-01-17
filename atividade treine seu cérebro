@@ -1,14 +1,12 @@
 <?php
     const DIAS_ANO = 365;
     const MINUTOS_PERDIDOS_1CIGARRO = 11;
-
     $anos = 3;
     $dias = $anos * DIAS_ANO;  
     $cigarros_dia = 10;
     $total_cigarros = $cigarros_dia * $dias;
     $total_minutos_perdidos = MINUTOS_PERDIDOS_1CIGARRO * $total_cigarros;
 
-    
     $total_horas_perdidas = intdiv($total_minutos_perdidos, 60);
     $minutos_perdidos = $total_minutos_perdidos - (60 * intdiv($total_minutos_perdidos, 60));
 
